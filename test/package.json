@@ -1,0 +1,41 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "rimraf allure-results && rimraf allure-report && rimraf test-screenshots && rimraf wdio-logs",
+    "open": "npx wdio run ./wdio.conf.js",
+    "wdio": "wdio run wdio.conf.js",
+    "run-m-admin": "npx wdio run ./wdio.conf.js/ --spec mobile-administration ",
+    "run-web-twde": "npx wdio run ./wdio.conf.js/ --spec web-twde",
+    "report-generate": "allure generate --clean allure-results",
+    "report-open": "allure open allure-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
+    "@babel/register": "^7.16.9",
+    "@types/webdriverio": "^5.0.0",
+    "@wdio/allure-reporter": "^7.16.13",
+    "@wdio/dot-reporter": "^7.16.13",
+    "@wdio/local-runner": "^7.16.13",
+    "@wdio/mocha-framework": "^7.16.13",
+    "@wdio/spec-reporter": "^7.16.13",
+    "chai": "^4.3.4",
+    "chai-webdriverio": "^1.0.0",
+    "chromedriver": "^97.0.0",
+    "local-runner": "^0.1.1-alpha",
+    "rimraf": "^3.0.2",
+    "wdio-chromedriver-service": "^7.2.6",
+    "webdriverio": "^7.16.13"
+  },
+  "dependencies": {
+    "@wdio/cli": "^7.16.13",
+    "@wdio/sync": "^7.16.13",
+    "allure-commandline": "^2.17.2"
+  }
+}
