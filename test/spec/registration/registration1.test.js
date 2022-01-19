@@ -1,5 +1,5 @@
-import { accountPage, header, loginPage, logoutPage, registerPage, search } from "../../../pageobjects";
-import { randomShortStringNum, verifyIsVisible, } from "../../../pageobjects/common";
+import { accountPage, header, loginPage, logoutPage, registerPage, search } from "../../pageobjects";
+import { randomShortStringNum, verifyIsVisible, } from "../../pageobjects/common";
 
 describe("Registration tests", () => {
 
@@ -7,7 +7,7 @@ describe("Registration tests", () => {
     const randomLastName = `shoppa${randomShortStringNum()}`;
     const randomEmail = `${randomFirstName}@mailinator.com`;
     const password = "test.123";
-
+    //Mandatory test
     it("Register an account, verify it is a success", () => {
         const createdAccountTitle = $("h1=Your Account Has Been Created!");
         registerPage.registrationPage;
@@ -21,14 +21,14 @@ describe("Registration tests", () => {
         registerPage.continueButton.click();
         verifyIsVisible(createdAccountTitle);
     });
-
+    //Mandatory test
     it('User should be able to log out, verify user is logged out message', () => {
         header.logout();
         verifyIsVisible(logoutPage.safeToLeaveMessage);
         verifyIsVisible(logoutPage.shoppingCartMessage);
         verifyIsVisible(logoutPage.continueButton);
     });
-
+    //Mandatory test
     it('Login with a registered user, verify user is logged in', () => {
         header.openLoginPage();
         loginPage.emailInput.addValue(randomEmail);
@@ -38,12 +38,6 @@ describe("Registration tests", () => {
         verifyIsVisible(accountPage.myOrdersTitle);
         verifyIsVisible(accountPage.myAffiliateAccountTitle);
         verifyIsVisible(accountPage.newsletterTitle);
-    });
-
-    it('Verify Logged in user can search for products', () => {
-
-        search.searchStore("iPhone")
-
     });
 
 });
