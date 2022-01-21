@@ -7,8 +7,6 @@
     "pretest": "rimraf allure-results && rimraf allure-report && rimraf test-screenshots && rimraf wdio-logs",
     "open": "npx wdio run ./wdio.conf.js",
     "wdio": "wdio run wdio.conf.js",
-    "run-m-admin": "npx wdio run ./wdio.conf.js/ --spec mobile-administration ",
-    "run-web-twde": "npx wdio run ./wdio.conf.js/ --spec web-twde",
     "report-generate": "allure generate --clean allure-results",
     "report-open": "allure open allure-report"
   },
