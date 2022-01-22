@@ -6,7 +6,7 @@
 - Registered user as a Visitor user can reset the password and use it to log in
 - Visitor user can search for products
 - Loged in user can search for products
-### Instalation
+### Installation
 - Pull the project to your local machine
 - run npm install
 ### Requirements
