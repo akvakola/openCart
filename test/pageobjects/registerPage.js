@@ -28,6 +28,24 @@ class RegisterPage {
   get privacyPolicyCheckbox() {
     return $("[type='checkbox']");
   }
+  get firstNameCharacterLengthValidationMessage() {
+    return $("div=First Name must be between 1 and 32 characters!");
+  }
+  get lastNameCharacterLengthValidationMessage() {
+    return $("div=Last Name must be between 1 and 32 characters!");
+  }
+  get invalidEmailValidationMessage() {
+    return $("div=E-Mail Address does not appear to be valid!");
+  }
+  get telephoneCharacterLengthValidationMessage() {
+    return $("div=Telephone must be between 3 and 32 characters!");
+  }
+  get passwordCharacterLengthValidationMessage() {
+    return $("div=Password must be between 4 and 20 characters!");
+  }
+  get invalidPasswordConfirmationMessage() {
+    return $("div=Password confirmation does not match password!");
+  }
 }
 
 export default new RegisterPage();

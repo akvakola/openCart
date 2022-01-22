@@ -24,4 +24,16 @@ describe('Login tests', () => {
         loginPage.login("fghjkl", "paspaspas222");
         verifyIsVisible(loginPage.errorValidationMessage);
     });
+
+    it('Login with no credentials, verify warning message', () => {
+        browser.url("https://demo.opencart.com/index.php?route=common/home");
+        header.openLoginPage();
+        loginPage.loginButton.click();
+        verifyIsVisible(loginPage.errorValidationMessage);
+    });
+
+    it('Verify breadcrumbs are displayed', () => {
+        const loginBreadcrumbs = $(".breadcrumb").$("a=Login");
+        verifyIsVisible(loginBreadcrumbs);
+    });
 });

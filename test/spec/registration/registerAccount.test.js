@@ -40,4 +40,42 @@ describe("Registration tests", () => {
         verifyIsVisible(accountPage.newsletterTitle);
     });
 
+    it('Logout, verify user is logged out', () => {
+        header.logout();
+        verifyIsVisible(logoutPage.accountLogoutTitle);
+        logoutPage.continueButton.click();
+    });
+
+    it('Submit a blank request verify first name validation message is displayed', () => {
+        registerPage.registrationPage;
+        registerPage.continueButton.waitForClickable();
+        registerPage.continueButton.click();
+        verifyIsVisible(registerPage.firstNameCharacterLengthValidationMessage);
+    });
+
+    it('Submit a blank request verify last name validation message is displayed', () => {
+        verifyIsVisible(registerPage.lastNameCharacterLengthValidationMessage);
+    });
+
+    it('Submit a blank request verify email validation message is displayed', () => {
+        verifyIsVisible(registerPage.invalidEmailValidationMessage);
+    });
+
+    it('Submit a blank request verify telephone validation message is displayed', () => {
+        verifyIsVisible(registerPage.telephoneCharacterLengthValidationMessage);
+    });
+
+    it('Submit a blank request verify password validation message is displayed', () => {
+        verifyIsVisible(registerPage.passwordCharacterLengthValidationMessage);
+    });
+
+    it('Enter not matching passwords, verify confirm password validation message is displayed', () => {
+        registerPage.registrationPage;
+        registerPage.continueButton.waitForClickable();
+        registerPage.passwordInput.addValue("test.123");
+        registerPage.confirmPasswordInput.addValue("pass.123");
+        registerPage.continueButton.click();
+        verifyIsVisible(registerPage.invalidPasswordConfirmationMessage);
+    });
+
 });
